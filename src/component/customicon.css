@@ -1,0 +1,33 @@
+.icon-custom-delete {
+    background-image: url("/img/remove.png");
+    background-position: center center;
+    background-size: cover;
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+}
+
+.icon-custom-envelope {
+    background-image: url("/img/envelope.png");
+    background-position: center center;
+    background-size: cover;
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+}
+
+.align-items-center {
+    -ms-flex-align: center!important;
+    align-items: center!important;
+    display: flex;
+    justify-content: center;
+}
+
+.icon-custom-add {
+    background-image: url("/img/plus.png");
+    background-position: bottom;
+    background-size: cover;
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+}
