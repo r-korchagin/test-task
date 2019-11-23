@@ -1,9 +1,9 @@
 import React from 'react';
 import Content from './component/content';
 
-function App() {
+const App = () => {
   return (
-    <div className="container-fluid">
+    <div>
       <Content/>
     </div>
   );
