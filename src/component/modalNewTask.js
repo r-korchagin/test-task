@@ -1,19 +1,26 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
+import { observer } from "mobx-react";
+
+import modalStore from '../store/modalStore';
+import taskList from '../store/taskListStore';
 
 const CreateModal = () => {
-  const [showModal, setShowModal] = useState(true);
   const [showSave, setSave] = useState(false);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
 
   const closeForm = () => {
-    setShowModal(false);
+    modalStore.closeNewTaskModal();
   };
 
   const saveTask = () => {
-    // TODO Append data
-    setShowModal(false);
+    taskList.addNewTask({ 
+        id:taskList.getTaskCount + 1,
+        name:name,
+        description:description
+    })  
+    modalStore.closeNewTaskModal();
   };
 
   const onChangeName = event => {
@@ -27,7 +34,7 @@ const CreateModal = () => {
   };
 
   return (
-    <Modal show={showModal} onHide={closeForm} animation={true}>
+    <Modal show={modalStore.newTaskModal} onHide={closeForm} animation={true}>
       <Modal.Header closeButton>
         <Modal.Title>New Task</Modal.Title>
       </Modal.Header>
@@ -63,4 +70,4 @@ const CreateModal = () => {
   );
 };
 
-export default CreateModal;
+export default observer(CreateModal);

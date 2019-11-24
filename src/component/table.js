@@ -1,5 +1,8 @@
 import React from "react";
-import "./customicon.css";
+import { observer } from "mobx-react";
+
+import TableRow from './tableRow';
+import taskList from '../store/taskListStore';
 
 const Table = () => {
   return (
@@ -13,31 +16,18 @@ const Table = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1.</td>
-          <td>
-            <ul className="list-inline">
-              <li className="list-inline-item">
-                <i className="icon-custom-envelope"></i>
-              </li>
-              <li className="list-inline-item">Earn Degree</li>
-            </ul>
-          </td>
-          <td>dfgdfgdfgdfgdfgdfvxvx dfgdfgdfgdfgdfgdfvxvx</td>
-          <td className="text-center">
-            <a
-              href="#"
-              onClick={e => {
-                e.preventDefault();
-              }}
-            >
-              <i className="icon-custom-delete"></i>
-            </a>
-          </td>
-        </tr>
+        {taskList.taskList.map((el,index) => { 
+            return(
+                <TableRow 
+                    key = {index}
+                    id={el.id} 
+                    name={el.name} 
+                    description={el.description}/>  
+            )}
+        )}
       </tbody>
     </table>
   );
 };
 
-export default Table;
+export default observer(Table);

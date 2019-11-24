@@ -2,8 +2,11 @@
   "name": "test-task",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "mobx": "^5.15.0",
+    "mobx-react": "^6.1.4",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
