@@ -1,9 +1,9 @@
 ## Description
 This is the test project for task list.
 
-To add new task, click on plus icon.
-To delete, click on remove icon in current row.
-To modify doubleclick on a row.
+* To add new task, click on plus icon.
+* To delete, click on remove icon in current row.
+* To modify doubleclick on a row.
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
